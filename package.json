@@ -10,6 +10,7 @@
   "author": "Shivan Modha",
   "license": "MIT",
   "dependencies": {
-    "electron": "^1.6.11"
+    "electron": "^1.6.11",
+    "marked": "^0.3.6"
   }
 }

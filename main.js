@@ -3,7 +3,8 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const url = require('url');
-var MainWindow;
+const marked = require('marked');
+let MainWindow;
 function event_create()
 {
     MainWindow = new BrowserWindow(
@@ -12,13 +13,12 @@ function event_create()
             height: 600,
             title: "Markify",
             show: false
-         });
-    MainWindow.loadURL(url.format(
-        {
-            pathname: path.join(__dirname, '/index.html'),
-            protocol: 'file',
-            slashes: true
-         }));
+        });
+    let html_csslink = "<head><link rel=\"stylesheet\" type=\"text/css\" href=\"styles/kult.css\"/></head>\n"
+    let html_md = marked("# BEHEAD THAT WERE STILL");
+    console.log(html_csslink + html_md);
+    let html_url = 'data:text/html,' + encodeURIComponent(html_csslink + html_md);
+    MainWindow.loadURL(html_url);
     MainWindow.on('closed', event_destroy);
     MainWindow.on('ready-to-show', event_load);
 }
