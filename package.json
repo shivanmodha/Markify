@@ -1,0 +1,15 @@
+{
+  "name": "markify",
+  "version": "1.0.0",
+  "description": "Markdown viewer and editor",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron . main"
+  },
+  "author": "Shivan Modha",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^1.6.11"
+  }
+}
